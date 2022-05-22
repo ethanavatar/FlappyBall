@@ -70,12 +70,10 @@ public class FlappyController : MonoBehaviour
         }
     }
 
-    void restart()
+    public void Restart()
     {
         m_Rigidbody.velocity = Vector2.zero;
-        m_Rigidbody.position = new Vector2(0.0f, 0.0f);
-
-        m_GameManager.Restart();
+        transform.position = new Vector2(0.0f, 0.0f);
     }
 
 }

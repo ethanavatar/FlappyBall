@@ -16,6 +16,8 @@ public class GameManager : MonoBehaviour
 
     public int m_HighScore = 0;
 
+    private FlappyController m_Bird;
+
     [SerializeField]
     private bool m_IsPaused = false;
 
@@ -46,6 +48,8 @@ public class GameManager : MonoBehaviour
     {
         Pause(true);
         m_HighScoreText.text = $"Best: {m_HighScore.ToString()}";
+
+        m_Bird = GameObject.Find("Bird").GetComponent<FlappyController>();
     }
 
     void Update()
@@ -58,9 +62,11 @@ public class GameManager : MonoBehaviour
         if (Input.GetButtonDown("Jump"))
         {
             m_PlayTextObject.SetActive(false);
-            #if !UNITY_WEBGL
-            m_QuitTextObject.SetActive(false);
-            #endif
+
+            if (m_IsWebGL)
+            {
+                m_QuitTextObject.SetActive(false);
+            }
 
             Restart();
 
@@ -97,9 +103,11 @@ public class GameManager : MonoBehaviour
     {
         m_GameOverTextObject.SetActive(false);
 
-        Time.timeScale = 1.0f;
-
         ClearPipes();
+        m_Bird.Restart();
+
+
+        Time.timeScale = 1.0f;
 
         m_Score = 0;
         m_ScoreText.text = m_Score.ToString();

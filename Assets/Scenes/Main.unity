@@ -472,11 +472,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40b6e2d8c69abc045a0a8e8640d2453e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_ScoreTextObject: {fileID: 1254467030}
-  m_HighScoreTextObject: {fileID: 1629099373}
-  m_GameOverTextObject: {fileID: 716852206}
-  m_PlayTextObject: {fileID: 2091827494}
-  m_QuitTextObject: {fileID: 636892225}
+  m_GameManager: {fileID: 1466743612}
   p_FlapForce: 7
   p_MaxVelocityY: 5
   p_MaxYPos: 4.5
@@ -780,7 +776,7 @@ GameObject:
   - component: {fileID: 1254467033}
   - component: {fileID: 1254467032}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -912,6 +908,56 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1466743611
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1466743613}
+  - component: {fileID: 1466743612}
+  m_Layer: 0
+  m_Name: GameManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1466743612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466743611}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59217586692556048a6bb6cf3f551e4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ScoreTextObject: {fileID: 1254467030}
+  m_HighScoreTextObject: {fileID: 1629099373}
+  m_GameOverTextObject: {fileID: 716852206}
+  m_PlayTextObject: {fileID: 2091827494}
+  m_QuitTextObject: {fileID: 636892225}
+  m_HighScore: 0
+  m_IsPaused: 0
+--- !u!4 &1466743613
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1466743611}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1493200340
 GameObject:
